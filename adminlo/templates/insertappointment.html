@@ -1,0 +1,148 @@
+
+{% extends "navbarR.html" %}
+
+{% load static %}
+
+{% block cont %}
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h4 class="card-title">NEW Appointment</h4>
+                            <p class="card-title-desc"></p>
+
+                            <form class="row g-3 needs-validation" novalidate method="POST" >
+                                {% csrf_token %}
+
+                                <div class="col-md-4">
+                                    <label for="validationCustom01" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Name" name="patientNAME" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom04" class="form-label">Service</label>
+                                    <select class="form-select" id="validationCustom04" name="patientSERVICEID" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        {% for i in service %}
+                                        <option value="{{i.0}}">{{i.1}}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom04" class="form-label">Doctor</label>
+                                    <select class="form-select" id="validationCustom04" name="patientDOCTORID" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        {% for i in doctor %}
+                                        <option value="{{i.0}}">{{i.2}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">E-Mail</label>
+                                    <div>
+                                        <input type="email" class="form-control" name="patientEMAIL" required
+                                        parsley-type="email" placeholder="Enter a valid e-mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Consultance Fees</label>
+                                    <div>
+                                        <input type="text" class="form-control" name="patientCONSULTANCYFEES" required >
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="validationCustom04" class="form-label">Gender</label>
+                                    <select class="form-select" id="validationCustom04" name="patientGENDER" required>
+                                       <option selected disabled value="">Choose...</option>
+                                       <option value="Male">Male</option>
+                                       <option value="Female">Female</option>
+                                       <option value="Other">Other</option>
+
+                                   </select>
+                                   <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Height</label>
+                                <div>
+                                    <input type="text" class="form-control" name="patientHEIGHT" required >
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Weight</label>
+                                <div>
+                                    <input type="text" class="form-control" name="patientWEIGHT" required >
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Age</label>
+                                <div>
+                                    <input type="text" class="form-control" name="patientAGE" required >
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Phone No.</label>
+                                <div>
+                                    <input type="text" class="form-control" name="patientPHONE" required placeholder="9999999999">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="validationCustom04" class="form-label">Offer</label>
+                                <select class="form-select" id="validationCustom04" name="patientOFFERID" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    {% for i in offer %}
+                                    <option value="{{i.0}}">{{i.1}} {{i.2}}rs</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="validationCustom05" class="form-label">Date of appointment</label>
+
+                                <input type="date" class="form-control" name="patientDATE"  value="{{currentdate}}"  disabled >
+                            </div>
+                            <div class="col-md-3">
+                                <label for="validationCustom05" class="form-label">Timeing</label>
+                                <input type="text" class="form-control" id="validationCustom05" name="patientTIMEING" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Address</label>
+                                <div>
+                                    <textarea name="patientADDRESS" required class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %} 

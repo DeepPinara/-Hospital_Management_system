@@ -1,0 +1,228 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Dashboard | DantCare - Admin & Dashboard </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+    <meta content="Themesbrand" name="author">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+    
+    <link href="{% static 'assets/libs/chartist/chartist.min.css' %}" rel="stylesheet">
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css">
+    
+    <!-- Bootstrap Css -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css">
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- App Css-->
+    <link href="{% static 'assets/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{% static 'assets/images/logo-dark.png' %}" alt="" height="17">
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{% static 'assets/images/favicon.ico' %}" alt="" height="40">
+                                <h5 class="font-size-30 text-uppercase text-white-50">DentCare</h5>
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+
+
+                </div>
+
+                <div class="d-flex">
+                  <!-- App Search-->
+
+                  <div class="dropdown d-none d-lg-inline-block">
+                    <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
+                        <i class="mdi mdi-fullscreen"></i>
+                    </button>
+                </div>
+
+
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="{% static 'assets/images/users/user-4.jpg' %}"
+                    alt="Header Avatar">
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 align-middle me-1"></i> {{admin.0.1}}</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="logout"><i class="bx bx-power-off font-size-17 align-middle me-1 text-danger"></i> Logout</a>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+</header>
+
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+    <div data-simplebar class="h-100">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">Main</li>
+
+                <li>
+                    <a href="Dashboard" class="waves-effect">
+                        <i class="ti-home"></i><span class="badge rounded-pill bg-primary float-end"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <img src="{% static 'assets/images/services-icon/doctor.png' %}" height="20" width="20" hspace="5" alt="">
+                        <span>Doctor</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="viD">View</a></li>
+                        <li><a href="inD">Insert</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <img src="{% static 'assets/images/services-icon/report.png' %}" height="20" width="20" hspace="5" alt="">
+                        <span>Appointment</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="viA">View</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <img src="{% static 'assets/images/services-icon/user-group-296.png' %}" height="20" width="20" hspace="5" alt="">
+                        <span>Patient</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="viP">View</a></li>
+                        <!-- <li><a href="D">Insert</a></li> -->
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <img src="{% static 'assets/images/services-icon/nurse.png' %}" height="20" width="20" hspace="5" alt="">
+                        <span>Receptionist</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                      <li><a href="ViD">View</a></li>
+                      <li><a href="inD">Insert</a></li>
+                  </ul>
+              </li>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <img src="{% static 'assets/images/services-icon/assistance.png' %}" height="20" width="20" hspace="5" alt="">
+                    <span>Service</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li><a href="viS">View</a></li>
+                  <li><a href="inS">Insert</a></li>
+              </ul>
+          </li>
+
+      </ul>
+  </div>
+  <!-- Sidebar -->
+</div>
+</div>
+<!-- Left Sidebar End -->
+
+{% block cont %}
+
+{% endblock %} 
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+<!-- materialdesign icon js-->
+<script src="{% static 'assets/js/pages/materialdesign.init.js' %}"></script>
+<!-- JAVASCRIPT -->
+<script src="{% static 'assets/libs/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/libs/metismenu/metisMenu.min.js' %}"></script>
+<script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+<script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+
+<!-- Required datatable js -->
+<script src="{% static 'assets/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+
+<!-- Responsive examples -->
+<script src="{% static 'assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+<!-- Buttons examples -->
+<script src="{% static 'assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/libs/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'assets/libs/pdfmake/build/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/libs/pdfmake/build/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+<script src="{% static 'assets/js/pages/datatables.init.js' %}"></script> 
+<!-- Peity chart-->
+<script src="{% static 'assets/libs/peity/jquery.peity.min.js' %}"></script>
+<script src="{% static 'assets/libs/parsleyjs/parsley.min.js' %}"></script>
+
+<script src="{% static 'assets/js/pages/form-validation.init.js' %}"></script>
+
+<!-- Plugins js -->
+<script src="{% static 'assets/libs/dropzone/min/dropzone.min.js' %}"></script>
+
+<!-- Plugin Js-->
+<script src="{% static 'assets/libs/chartist/chartist.min.js' %}"></script>
+<script src="{% static 'assets/libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js' %}"></script>
+
+<script src="{% static 'assets/js/pages/dashboard.init.js' %}"></script>
+
+<script src="{% static 'assets/js/app.js' %}"></script>
+
+</body>
+
+</html>
